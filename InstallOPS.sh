@@ -2,9 +2,9 @@
 if [ $# -eq 0 ]
 then
     echo "This script will download, compile and install the OPS library to a specified directory!"
-    echo "Usage: OPS_INSTALL dir  MachineType"
-    echo "OPS_INSTALL dir: the directory to install OPS ($HOME/OPS_INSTALL by default!)"
-    echo " MachineType (Ubuntu ARCHER2) Ubuntu by default"
+    echo "Usage: ./InstallOPS.sh Dir  MachineType"
+    echo "Dir: the directory to install OPS ($HOME/OPS_INSTALL by default!)"
+    echo "MachineType (Ubuntu ARCHER2) Ubuntu by default"
     exit 1
 fi
 dir=$HOME/OPS_INSTALL

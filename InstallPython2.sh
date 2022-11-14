@@ -14,6 +14,10 @@ chmod a+x ./Miniconda2-py27_4.8.3-Linux-x86_64.sh
 source $dir/bin/activate
 pip install sympy==1.1
 pip install numpy matplotlib h5py
+ if [ ! -d "$HOME/bin" ]
+    then
+        mkdir -p $HOME/bin
+fi
 cd $HOME/bin
 echo "#!/bin/bash" > Python2
 echo "echo \"The default shell for Python2 is bash. Enter the shell name to change\" " >> Python2
@@ -26,5 +30,7 @@ echo "fi" >> Python2
 echo "source $dir/bin/activate" >> Python2
 echo "\$shell" >> Python2
 chmod a+x Python2
+echo "$HOME/bin/Python2 can be called to activate the Python2 environment!"
+echo "Consider to add $HOME/bin to path"
 
 
