@@ -34,7 +34,7 @@ fi
 
 wget -c https://github.com/OP-DSL/OPS/archive/refs/heads/develop.zip
 unzip develop.zip
-rm OPS-develop
+rm develop.zip
 cd OPS-develop
 mkdir build
 cd build
@@ -42,3 +42,5 @@ cmake ../ -DCMAKE_INSTALL_PREFIX=$1 -DCMAKE_BUILD_TYPE=Release -DCFLAG="-ftree-v
 -DCXXFLAG="-ftree-vectorize -funroll-loops" -DBUILD_OPS_APPS=OFF
 cmake --build . -j 4
 cmake --install .
+cd ../../
+rm -r -f OPS-develop

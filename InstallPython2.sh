@@ -18,6 +18,7 @@ pip install numpy matplotlib h5py scipy
     then
         mkdir -p $HOME/bin
 fi
+rm Miniconda2-py27_4.8.3-Linux-x86_64.sh
 cd $HOME/bin
 echo "#!/bin/bash" > Python2
 echo "echo \"The default shell for Python2 is bash. Enter the shell name to change\" " >> Python2
@@ -32,6 +33,6 @@ echo "\$shell" >> Python2
 chmod a+x Python2
 echo "$HOME/bin/Python2 can be called to activate the Python2 environment!"
 echo "Consider to add $HOME/bin to path"
-rm Miniconda2-py27_4.8.3-Linux-x86_64.sh
+
 
 

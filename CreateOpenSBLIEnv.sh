@@ -12,7 +12,7 @@ wget -c https://github.com/jpmeng/utilities/archive/refs/heads/main.zip
 unzip -j main.zip
 rm main.zip
 ./InstallPython2.sh Python2
-./InstallOPS.sh OPS-INSTALL ARCHER2
+./InstallOPS.sh $1/OPS-INSTALL ARCHER2
 wget -c https://github.com/opensbli/opensbli/archive/refs/heads/cpc_release.zip
 unzip cpc_release.zip
 rm cpc_release.zip
