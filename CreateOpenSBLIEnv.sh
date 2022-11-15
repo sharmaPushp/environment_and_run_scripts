@@ -3,7 +3,7 @@ if [ $# -eq 0 ]
 then
     echo "This script will create the whole OpenSBLI environment !"
     echo "Usage: ./CreateOpenSBLIEnv.sh Dir"
-    echo "Dir: the directory for the environment."
+    echo "Dir: the directory for the environment. Note: Dir must be a absoulte path"
     exit 1
 fi
 mkdir -p $1
