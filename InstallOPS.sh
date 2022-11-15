@@ -34,6 +34,7 @@ fi
 
 wget -c https://github.com/OP-DSL/OPS/archive/refs/heads/develop.zip
 unzip develop.zip
+rm OPS-develop
 cd OPS-develop
 mkdir build
 cd build

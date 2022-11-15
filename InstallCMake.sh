@@ -34,3 +34,4 @@ then
     ln -s $cmake_dir/bin/cmake $HOME/bin/cmake
     echo "Please add $HOME/bin to path for enabling CMake"
 fi
+rm cmake-$version-Linux-x86_64.sh

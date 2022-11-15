@@ -32,5 +32,6 @@ echo "\$shell" >> Python2
 chmod a+x Python2
 echo "$HOME/bin/Python2 can be called to activate the Python2 environment!"
 echo "Consider to add $HOME/bin to path"
+rm Miniconda2-py27_4.8.3-Linux-x86_64.sh
 
 
