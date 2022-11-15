@@ -12,4 +12,4 @@ cp $EnvDir/CMakeLists.txt .
 mkdir build
 cd build
 cmake ../ -DOPS_INSTALL_DIR=$EnvDir/OPS-INSTALL -DOPS_TEST=OFF -DAPP_INSTALL_DIR=$HOME/OPS-APP -DGPU_NUMBER=1
-cmake --build .
+cmake --build . -j 4
