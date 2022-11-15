@@ -7,4 +7,9 @@ then
     echo "The compiling process needs Python3!"
     exit 1
 fi
-cmake ../ -DOPS_INSTALL_DIR=$1/OPS-INSTALL -DOPS_TEST=OFF -DAPP_INSTALL_DIR=$HOME/OPS-APP -DGPU_NUMBER=1
+EnvDir=$1
+cp $EnvDir/CMakeLists.txt .
+mkdir build
+cd build
+cmake ../ -DOPS_INSTALL_DIR=$EnvDir/OPS-INSTALL -DOPS_TEST=OFF -DAPP_INSTALL_DIR=$HOME/OPS-APP -DGPU_NUMBER=1
+cmake --build .
