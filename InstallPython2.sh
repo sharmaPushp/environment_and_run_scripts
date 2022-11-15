@@ -13,7 +13,7 @@ chmod a+x ./Miniconda2-py27_4.8.3-Linux-x86_64.sh
 ./Miniconda2-py27_4.8.3-Linux-x86_64.sh -p $dir -b
 source $dir/bin/activate
 pip install sympy==1.1
-pip install numpy matplotlib h5py
+pip install numpy matplotlib h5py scipy
  if [ ! -d "$HOME/bin" ]
     then
         mkdir -p $HOME/bin
