@@ -11,7 +11,7 @@ cd $1
 wget -c https://github.com/jpmeng/utilities/archive/refs/heads/main.zip
 unzip -j main.zip
 rm main.zip
-./InstallPython2.sh Python2
+./InstallPython2.sh $1/Python2
 ./InstallOPS.sh $1/OPS-INSTALL ARCHER2
 wget -c https://github.com/opensbli/opensbli/archive/refs/heads/cpc_release.zip
 unzip cpc_release.zip
