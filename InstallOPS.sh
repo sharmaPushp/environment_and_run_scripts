@@ -1,3 +1,7 @@
+##@brief Download, compile and install OPS library
+##@author Jianping Meng
+##@contributors
+##@details
 #!/bin/bash
 if [ $# -eq 0 ]
 then

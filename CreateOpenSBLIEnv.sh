@@ -1,3 +1,7 @@
+##@brief Create  a working environment for OpenSBLI!
+##@author Jianping Meng
+##@contributors
+##@details
 #!/bin/bash
 if [ $# -ne 2 ]
 then

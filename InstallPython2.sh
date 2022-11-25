@@ -1,3 +1,7 @@
+##@brief Create a Python2 environment
+##@author Jianping Meng
+##@contributors
+##@details
 #!/bin/bash
 if [ $# -eq 0 ]
 then

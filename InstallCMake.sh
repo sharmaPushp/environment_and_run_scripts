@@ -1,3 +1,7 @@
+##@brief Download and install a specific version of CMake
+##@author Jianping Meng
+##@contributors
+##@details
 #!/bin/bash
 if [ $# -ne 3 ]
 then

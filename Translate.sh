@@ -1,3 +1,7 @@
+##@brief Translate a OpenSBLI app to OPS C/C++ code
+##@author Jianping Meng
+##@contributors
+##@details
 #!/bin/bash
 if [ $# -ne 2 ]
 then
