@@ -1,19 +1,25 @@
 #!/usr/bin/env python3
 
+try:
+    import jinja2
+except ImportError:
+    print("Trying to Install required module: jinja2\n")
+    os.system('python -m pip install jinja2')
+
 from jinja2 import Environment, FileSystemLoader
 import os
 try:
     import commentjson
 except ImportError:
     print("Trying to Install required module: commentjson\n")
-    os.system('python -m pip install requests')
+    os.system('python -m pip install commentjson')
 import commentjson as json
 import argparse
 
 parser = argparse.ArgumentParser(
-    prog = 'ProgramName',
-    description = 'What the program does',
-    epilog = 'Text at the bottom of help')
+    prog = 'Submit.py',
+    description = 'Automatically generate submission for a specified supercomputer.',
+    epilog = '')
 parser.add_argument('filename', type=str, nargs='?', default="JobSubmission.json",help="JSON file for specifying submission options.")
 
 args = parser.parse_args()
