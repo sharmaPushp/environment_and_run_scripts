@@ -58,6 +58,8 @@ then
     echo "This script will download, compile with ${Compiler} and install the OPS library to to ${Dir}!"
 fi
 
+OPTIMISATION="-DCFLAG=\"-ftree-vectorize -funroll-loops\" -DCXXFLAG=\"-ftree-vectorize -funroll-loops\""
+
 if ! grep "CreateOpenSBLIEnv" /proc/$PPID/cmdline
 then
     if [ $Machine == "Ubuntu" ]
@@ -82,8 +84,9 @@ fi
 
 if [ $Machine == "CIRRUS" ]
 then
-    module load nvidia/nvhpc
+    module load nvidia/nvhpc/22.2
     module load cmake/3.22.1
+    OPTIMISATION=""
     if [ -z ${HDF5Root} ]
     then
         module load hdf5parallel/1.12.0-nvhpc-openmpi
@@ -127,7 +130,7 @@ SourceDir=OPS-`echo ${Branch} | sed  's/\//-/g'`
 cd ${SourceDir}
 mkdir build
 cd build
-cmake ../ -DCMAKE_INSTALL_PREFIX=${Dir} -DCMAKE_BUILD_TYPE=Release -DCFLAG="-ftree-vectorize -funroll-loops" -DCXXFLAG="-ftree-vectorize -funroll-loops" -DBUILD_OPS_APPS=OFF ${HDF5Root}
+cmake ../ -DCMAKE_INSTALL_PREFIX=${Dir} -DCMAKE_BUILD_TYPE=Release ${OPTIMISATION} -DBUILD_OPS_APPS=OFF ${HDF5Root}
 cmake --build . -j 4
 cmake --install .
 cd ../../
