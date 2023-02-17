@@ -65,8 +65,7 @@ while getopts ${optstring} options; do
         ;;
     esac
 done
-# Set the default machine in CompileC.sh
-sed -i "s/Machine=\"ARCHER2\"/Machine=\"${Machine}\"/g" CompileC.sh
+
 ## Install Gnu compiler provided by system
 if [ $Machine == "Ubuntu" ]
 then
@@ -101,6 +100,8 @@ unzip main.zip
 rm main.zip
 mv aosh-main/*  .
 rm -r -f aosh-main
+# Set the default machine in CompileC.sh
+sed -i "s/Machine=\"Ubuntu\"/Machine=\"${Machine}\"/g" CompileC.sh
 ## Install local HDF5 if needed
 WithHDF5=""
 if [[ "${LocalHDF5}"  == "ON" ]]

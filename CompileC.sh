@@ -20,7 +20,7 @@ AbsolutScriptPath="$(realpath "${ScriptPath}")"
 EnvDir="$(dirname "${AbsolutScriptPath}")"
 
 HDF5Root=""
-if [ -d "${EnvDir}/HDF5"]
+if [ -d "${EnvDir}/HDF5" ]
 then
     HDF5Root="-DHDF5_ROOT=${EnvDir}/HDF5"
 fi
@@ -83,7 +83,7 @@ then
     if [ -z ${HDF5Root} ]
     then
         module load hdf5/1.10.2/gcc/parallel
-    if
+    fi
     module load cuda/10.0
     module load cmake
 fi
