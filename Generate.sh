@@ -1,5 +1,5 @@
 #!/bin/bash
-##@brief Generate OPS C/C++ code for a OpenSBLI app 
+##@brief Generate OPS C/C++ code for a OpenSBLI app
 ##@author Jianping Meng
 ##@contributors
 ##@details
@@ -7,7 +7,7 @@
 function usage {
     echo "This script will translate the OpenSBLI Python cod  e to C/C++!"
     echo "Usage: ./$(basename $0) PythonSource"
-    echo "./$(basename $0) -h -> showing usage"  
+    echo "./$(basename $0) -h -> showing usage"
     echo "./$(basename $0) -e -> Specifying the environment directory."
 }
 
@@ -23,10 +23,10 @@ while getopts ${optstring} options; do
         h)
             usage
             exit 0
-        ;;       
+        ;;
         e)
             EnvDir=${OPTARG}
-        ;;       
+        ;;
         :)
             echo "$0: Must supply an argument to -$OPTARG." >&2
             exit 1
