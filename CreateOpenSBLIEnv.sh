@@ -93,12 +93,14 @@ then
    exit 1
 fi
 mkdir -p $Dir
-#cd $Dir ## needed by normal version
+cd $Dir ## needed by normal version
 ## Download the scripts
 
 wget -c https://github.com/jpmeng/aosh/archive/refs/heads/main.zip
-unzip -j main.zip
+unzip main.zip
 rm main.zip
+mv aosh-main/*  .
+rm -r -f aosh-main
 ## Install local HDF5 if needed
 WithHDF5=""
 if [[ "${LocalHDF5}"  == "ON" ]]
@@ -114,10 +116,11 @@ then
         export CC=mpicc
     fi
     ./InstallHDF5.sh -d "${Dir}/HDF5" -m ${Machine}
+fi
 # Python
 ./InstallPython.sh -d $Dir/Python
 # OPS
-./InstallOPS.sh -d $Dir/OPS-INSTALL -m ${Machine} ${WithHDF5} -b ${OpsBranch}
+./InstallOPS.sh -d $Dir/OPS-INSTALL -m ${Machine} ${WithHDF5} -o ${OpsBranch}
 # OpenSBLI
 wget -c https://github.com/opensbli/opensbli/archive/refs/heads/${Branch}.zip
 FileName="$(basename -- $Branch)"
