@@ -58,9 +58,11 @@ then
     echo "This script will download, compile with ${Compiler} and install the OPS library to to ${Dir}!"
 fi
 
-OPTIMISATION=-DCFLAG="-ftree-vectorize -funroll-loops" -DCXXFLAG="-ftree-vectorize -funroll-loops"
+# OPTIMISATION=-DCFLAG="-ftree-vectorize -funroll-loops"
+# echo ${OPTIMISATION}
+# #-DCXXFLAG="-ftree-vectorize -funroll-loops"
 
-#OPTIMISATION=-DCFLAG="-ftree-vectorize "-DCXXFLAG=-ftree-vectorize"
+OPTIMISATION=-DCFLAG="-ftree-vectorize "-DCXXFLAG=-ftree-vectorize"
 
 if ! grep "CreateOpenSBLIEnv" /proc/$PPID/cmdline
 then
@@ -132,7 +134,6 @@ SourceDir=OPS-`echo ${Branch} | sed  's/\//-/g'`
 cd ${SourceDir}
 mkdir build
 cd build
-pwd
 cmake ../ -DCMAKE_INSTALL_PREFIX=${Dir} -DCMAKE_BUILD_TYPE=Release ${OPTIMISATION} -DBUILD_OPS_APPS=OFF ${HDF5Root}
 cmake --build . -j 4
 cmake --install .

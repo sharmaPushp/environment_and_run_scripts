@@ -54,7 +54,7 @@ while getopts ${optstring} options; do
     esac
 done
 
-OPTIMISATION=-DCFLAG="-ftree-vectorize -funroll-loops" -DCXXFLAG="-ftree-vectorize -funroll-loops"
+OPTIMISATION=-DCFLAG="-ftree-vectorize "-DCXXFLAG=-ftree-vectorize"
 
 if [ $Machine == "CIRRUS" ]
 then
