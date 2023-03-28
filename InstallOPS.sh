@@ -133,7 +133,7 @@ cd ${SourceDir}
 mkdir build
 cd build
 pwd
-cmake "../" -DCMAKE_INSTALL_PREFIX=${Dir} -DCMAKE_BUILD_TYPE=Release "${OPTIMISATION}" -DBUILD_OPS_APPS=OFF "${HDF5Root}"
+cmake ../ -DCMAKE_INSTALL_PREFIX=${Dir} -DCMAKE_BUILD_TYPE=Release ${OPTIMISATION} -DBUILD_OPS_APPS=OFF ${HDF5Root}
 cmake --build . -j 4
 cmake --install .
 cd ../../
