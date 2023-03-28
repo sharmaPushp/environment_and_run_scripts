@@ -58,9 +58,9 @@ then
     echo "This script will download, compile with ${Compiler} and install the OPS library to to ${Dir}!"
 fi
 
-OPTIMISATION="-DCFLAG=\"-ftree-vectorize -funroll-loops\" -DCXXFLAG=\"-ftree-vectorize -funroll-loops\""
+OPTIMISATION=-DCFLAG="-ftree-vectorize -funroll-loops" -DCXXFLAG="-ftree-vectorize -funroll-loops"
 
-OPTIMISATION="-DCFLAG=-ftree-vectorize -DCXXFLAG=-ftree-vectorize"
+#OPTIMISATION=-DCFLAG="-ftree-vectorize "-DCXXFLAG=-ftree-vectorize"
 
 if ! grep "CreateOpenSBLIEnv" /proc/$PPID/cmdline
 then
