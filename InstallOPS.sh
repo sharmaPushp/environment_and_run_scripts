@@ -62,7 +62,7 @@ fi
 # echo ${OPTIMISATION}
 # #-DCXXFLAG="-ftree-vectorize -funroll-loops"
 
-OPTIMISATION=-DCFLAG="-ftree-vectorize "-DCXXFLAG=-ftree-vectorize"
+OPTIMISATION="-DCFLAG=-ftree-vectorize -DCXXFLAG=-ftree-vectorize"
 
 if ! grep "CreateOpenSBLIEnv" /proc/$PPID/cmdline
 then
