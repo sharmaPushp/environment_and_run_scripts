@@ -54,6 +54,8 @@ while getopts ${optstring} options; do
     esac
 done
 
+OPTIMISATION=-DCFLAG="-ftree-vectorize -funroll-loops" -DCXXFLAG="-ftree-vectorize -funroll-loops"
+
 if [ $Machine == "CIRRUS" ]
 then
     module load nvidia/nvhpc
@@ -91,5 +93,5 @@ fi
 cp $EnvDir/CMakeLists.txt .
 mkdir build
 cd build
-cmake ../ -DOPS_INSTALL_DIR=$EnvDir/OPS-INSTALL -DOPS_TEST=OFF -DAPP_INSTALL_DIR=$HOME/OPS-APP -DGPU_NUMBER=1 ${HDF5Root}
+cmake ../ -DOPS_INSTALL_DIR=$EnvDir/OPS-INSTALL -DCMAKE_BUILD_TYPE=Release -DOPS_TEST=OFF ${OPTIMISATION} -DAPP_INSTALL_DIR=$HOME/OPS-APP -DGPU_NUMBER=1 ${HDF5Root}
 cmake --build . -j 4
