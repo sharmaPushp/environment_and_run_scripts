@@ -48,7 +48,7 @@ chmod a+x ./${PackageName}
 ./${PackageName} -b -p ${Dir}
 source "$Dir/bin/activate" "$Dir"
 pip install sympy==1.1
-pip install numpy matplotlib h5py scipy Jinja2 commenjson
+pip install numpy matplotlib h5py scipy jinja2 commentjson
 
 #  if [ ! -d "$HOME/bin" ]
 #     then
