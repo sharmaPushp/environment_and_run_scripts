@@ -60,6 +60,8 @@ fi
 
 OPTIMISATION="-DCFLAG=\"-ftree-vectorize -funroll-loops\" -DCXXFLAG=\"-ftree-vectorize -funroll-loops\""
 
+OPTIMISATION="-DCFLAG=-ftree-vectorize -DCXXFLAG=-ftree-vectorize"
+
 if ! grep "CreateOpenSBLIEnv" /proc/$PPID/cmdline
 then
     if [ $Machine == "Ubuntu" ]
