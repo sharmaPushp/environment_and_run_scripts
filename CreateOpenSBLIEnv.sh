@@ -16,7 +16,7 @@ function usage {
     echo "./$(basename $0) -H -> if installing a local HDF5 library"
     echo "./$(basename $0) -c -> Specifying the compiler"
     echo "./$(basename $0) -m -> Specifying the machine type"
-    echo "Machine type can be: Ubuntu (default) ARCHER2 IRIDIS5 Fedora"
+    echo "Machine type can be: Ubuntu (default) ARCHER2 IRIDIS5 Fedora CenT"
 }
 
 optstring="hb:o:d:p:HC:m:"

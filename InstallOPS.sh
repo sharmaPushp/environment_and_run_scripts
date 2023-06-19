@@ -12,7 +12,7 @@ function usage {
     echo "./$(basename $0) -H -> Specifying the HDF5 directory"
     echo "./$(basename $0) -o -> Specifying the branch (e.g.,feature/HDF5Slice)"
     echo "./$(basename $0) -m -> Specifying the machine type"
-    echo "Machine type can be: Ubuntu (default) ARCHER2 IRIDIS5 Fedora"
+    echo "Machine type can be: Ubuntu (default) ARCHER2 IRIDIS5 Fedora CenT"
 }
 optstring="hc:m:d:H:o:"
 Compiler="Gnu"

@@ -12,7 +12,7 @@ function usage {
     echo "./$(basename $0) -f -> Enabling the Fortran support."
     echo "./$(basename $0) -s -> Compiling in the sequential mode (note OPS requires the parallel by default if using CMake)."
     echo "./$(basename $0) -m -> Specifying the machine type"
-    echo "Machine type can be: Ubuntu (default) ARCHER2 IRIDIS5 Fedora"
+    echo "Machine type can be: Ubuntu (default) ARCHER2 IRIDIS5 Fedora CenT"
 }
 optstring="v:d:fsh"
 HDF5Ver="1.12.1"
