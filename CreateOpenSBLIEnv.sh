@@ -121,7 +121,7 @@ fi
 # Python
 ./InstallPython.sh -d $Dir/Python
 # OPS
-./InstallOPS.sh -d $Dir/OPS-INSTALL -m ${Machine} ${WithHDF5} -o ${OpsBranch}
+./InstallOPS.sh -d $Dir/OPS-INSTALL -m ${Machine} ${WithHDF5} -o ${OpsBranch} -A ${Dir}
 # OpenSBLI
 wget -c https://github.com/opensbli/opensbli/archive/refs/heads/${Branch}.zip
 FileName="$(basename -- $Branch)"

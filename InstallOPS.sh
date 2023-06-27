@@ -12,6 +12,7 @@ function usage {
     echo "./$(basename $0) -H -> Specifying the HDF5 directory"
     echo "./$(basename $0) -o -> Specifying the branch (e.g.,feature/HDF5Slice)"
     echo "./$(basename $0) -m -> Specifying the machine type"
+    echo "./$(basename $0) -A -> Copy the CMake file for compiling applications to the directory"
     echo "Machine type can be: Ubuntu (default) ARCHER2 IRIDIS5 Fedora CenT"
 }
 optstring="hc:m:d:H:o:"
@@ -20,6 +21,7 @@ Dir="$HOME/OPS_INSTALL"
 Machine="Ubuntu"
 HDF5Root=""
 Branch="develop"
+AppCMakeDir=""
 
 while getopts ${optstring} options; do
     case ${options} in
@@ -32,6 +34,9 @@ while getopts ${optstring} options; do
         ;;
         m)
             Machine=${OPTARG}
+        ;;
+        A)
+            AppCMakeDir=${OPTARG}
         ;;
         d)
             Dir=${OPTARG}
@@ -132,6 +137,10 @@ unzip "${FileName}.zip"
 rm -r -f "${FileName}.zip"
 SourceDir=OPS-`echo ${Branch} | sed  's/\//-/g'`
 cd ${SourceDir}
+if [ -z ${AppCMakeDir} ]
+then
+    cp apps/c/CMakeLists.txt ${AppCMakeDir}
+fi
 mkdir build
 cd build
 cmake ../ -DCMAKE_INSTALL_PREFIX=${Dir} -DCMAKE_BUILD_TYPE=Release ${OPTIMISATION} -DBUILD_OPS_APPS=OFF ${HDF5Root}

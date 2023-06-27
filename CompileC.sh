@@ -90,7 +90,11 @@ then
     module load cmake
 fi
 
+OpenSBLIBuild="BUILD_OPS_C_SAMPLE(OpenSBLI \"NONE\" \"NONE\" \"NONE\" \"NO\" \"NO\")"
+
 cp $EnvDir/CMakeLists.txt .
+sed -i '/add_subdirectory/d' CMakeLists.txt
+sed -i "\$a${OpenSBLIBuild}" CMakeLists.txt
 mkdir build
 cd build
 cmake ../ -DOPS_INSTALL_DIR=$EnvDir/OPS-INSTALL -DCMAKE_BUILD_TYPE=Release -DOPS_TEST=OFF ${OPTIMISATION} -DAPP_INSTALL_DIR=$HOME/OPS-APP -DGPU_NUMBER=1 ${HDF5Root}
