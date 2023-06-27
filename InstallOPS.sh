@@ -15,7 +15,7 @@ function usage {
     echo "./$(basename $0) -A -> Copy the CMake file for compiling applications to the directory"
     echo "Machine type can be: Ubuntu (default) ARCHER2 IRIDIS5 Fedora CenT"
 }
-optstring="hc:m:d:H:o:"
+optstring="hc:m:A:d:H:o:"
 Compiler="Gnu"
 Dir="$HOME/OPS_INSTALL"
 Machine="Ubuntu"
