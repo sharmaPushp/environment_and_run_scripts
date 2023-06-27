@@ -14,11 +14,12 @@ function usage {
     echo "./$(basename $0) -m -> Specifying the machine type"
     echo "Machine type can be: Ubuntu (default) ARCHER2 IRIDIS5 Fedora CenT"
 }
-optstring="v:d:fsh"
+optstring="v:d:m:fsh"
 HDF5Ver="1.12.1"
 Dir="$HOME/HDF5"
 Parallel="ON"
 Fortran="OFF"
+Machine="Ubuntu"
 
 while getopts ${optstring} options; do
     case ${options} in
