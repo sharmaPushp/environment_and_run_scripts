@@ -28,6 +28,11 @@
 
     Copy CreateOpenSBLIEnv.sh into a directory, make it executable and run, for example, to create an environment including Python3/2, OPS.
 
+    ```bash
+    wget -c https://raw.githubusercontent.com/jpmeng/aosh/main/CreateOpenSBLIEnv.sh
+    chmod a+x CreateOpenSBLIEnv.sh
+    ```
+
     We note that the first argument of the script (i.e., the directory) must use absolute path.
 
     By default, the OPS library, the Python environment, the OpenSBLI framework are installed inside the directory. If required, a local HDF5 can also be installed.
