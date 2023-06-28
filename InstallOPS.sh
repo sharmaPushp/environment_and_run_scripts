@@ -13,7 +13,7 @@ function usage {
     echo "./$(basename $0) -o -> Specifying the branch (e.g.,feature/HDF5Slice)"
     echo "./$(basename $0) -m -> Specifying the machine type"
     echo "./$(basename $0) -A -> Copy the CMake file for compiling applications to the directory"
-    echo "Machine type can be: Ubuntu (default) ARCHER2 IRIDIS5 Fedora CenT"
+    echo "Machine type can be: Ubuntu (default) ARCHER2 IRIDIS5 Fedora DAaaS"
 }
 optstring="hc:m:A:d:H:o:"
 Compiler="Gnu"

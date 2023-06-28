@@ -10,7 +10,7 @@ function usage {
     echo "./$(basename $0) -H -> Specifying the HDF5 directory"
     echo "./$(basename $0) -e -> Sepcifying the envirment directory."
     echo "./$(basename $0) -m -> Specifying the machine type"
-    echo "Machine type can be: Ubuntu (default) ARCHER2 IRIDIS5 Fedora CenT"
+    echo "Machine type can be: Ubuntu (default) ARCHER2 IRIDIS5 Fedora DAaaS"
 
 }
 

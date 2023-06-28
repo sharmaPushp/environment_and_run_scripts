@@ -16,8 +16,9 @@ function usage {
     echo "./$(basename $0) -H -> if installing a local HDF5 library"
     echo "./$(basename $0) -c -> Specifying the compiler"
     echo "./$(basename $0) -m -> Specifying the machine type"
-    echo "Machine type can be: Ubuntu (default) ARCHER2 IRIDIS5 Fedora CenT"
+    echo "Machine type can be: Ubuntu (default) ARCHER2 IRIDIS5 Fedora DAaaS"
 }
+# DAaaS is a STFC platform for training, using Rocky Linux at this moment
 
 optstring="hb:o:d:p:HC:m:"
 Compiler="Gnu"
@@ -112,7 +113,7 @@ then
     fi
     mkdir ${Dir}/HDF5
     WithHDF5="-H ${Dir}/HDF5"
-    if [[ "${Machine}" == "Ubuntu" ]] ||  [[ "${Machine}" == "Fedora" ]]
+    if [[ "${Machine}" == "Ubuntu" ]] ||  [[ "${Machine}" == "Fedora" ]] || [[ "${Machine}" == "DAaaS" ]]
     then
         export CC=mpicc
     fi
