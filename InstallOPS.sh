@@ -137,7 +137,7 @@ unzip "${FileName}.zip"
 rm -r -f "${FileName}.zip"
 SourceDir=OPS-`echo ${Branch} | sed  's/\//-/g'`
 cd ${SourceDir}
-if [ -z ${AppCMakeDir} ]
+if [ ! -z ${AppCMakeDir} ]
 then
     cp apps/c/CMakeLists.txt ${AppCMakeDir}
 fi
