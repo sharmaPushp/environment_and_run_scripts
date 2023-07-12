@@ -150,7 +150,7 @@ then
 fi
 echo "To set up a few environment variables, please use source ${EnvDir}/${EnvFile}"
 echo "export PYTHON=\"source ${EnvDir}/Python/bin/activate \"${EnvDir}/Python\"\"" > ${EnvFile}
-export PATH=$PATH:${EnvDir} >> ${EnvFile}
-echo "echo \"To use the pre-installed Python, run \"eval \$PYTHON\"\"" >> ${EnvFile}
+echo "export PATH=$PATH:${EnvDir}" >> ${EnvFile}
+echo "echo \"To use the pre-installed Python, run \"eval '$PYTHON'\"" >> ${EnvFile}
 
             
