@@ -10,7 +10,7 @@
   - sed
   - CMake
 
-  In genearl we only need to take care of CMake where we will need CMake version higher than 3.18. If the default CMake provided by the system cannot satisfy this, we provide InstallCMake.sh to download and install CMake with a specified version. Assuming we would like to install Version 3.22.2
+  In general we only need to take care of CMake where we will need CMake version higher than 3.18. If the default CMake provided by the system cannot satisfy this, we provide InstallCMake.sh to download and install CMake with a specified version. Assuming we would like to install Version 3.22.2
 
   ```bash
   # install CMake into /usr/local/CMake
@@ -63,6 +63,9 @@
     cd OpenSBLI/apps/transitional_SBLI/
     ../../../CompileC.sh
     ```
+  - Step 4 Optional setup
+    After successfully compiling and installing everything, the script will indicate that we can use set up a few more environment variables by "source" the script OpenSBLIEnvVar under the specified directory (say ~/tmp/OpenSBLIEnv). It will set up the $PATH so that we can run Generate.sh and CompileC.sh without "../../../". Also, one can call $PYTHON to enter into the provided Python environment for postprocessing. 
+
 - Generate the submission script for supercomputers
 
   The capability is implemented by using Python 3. It requires two packages which are not shipped with Python 3 by default, i.e., Jinja2 and commentjson. The two packages are installed by default for the Python package installed InstallPython.sh. The script will automatically install them if they are not detected.
