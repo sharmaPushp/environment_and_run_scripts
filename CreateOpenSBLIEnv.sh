@@ -56,6 +56,12 @@ while getopts ${optstring} options; do
         p)
             PythonVer="3"
         ;;
+        P)
+                 
+
+            exit 0
+        ;;       
+      
         :)
             echo "$0: Must supply an argument to -$OPTARG." >&2
             exit 1
@@ -133,3 +139,18 @@ mv ${DefaultOpenSBLIDir} ${Dir}/OpenSBLI
 #wget -c https://github.com/opensbli/opensbli/archive/refs/heads/cpc_release.zip
 #unzip cpc_release.zip
 #rm cpc_release.zip
+
+ScriptPath="${BASH_SOURCE:-$0}"
+AbsolutScriptPath="$(realpath "${ScriptPath}")"
+EnvDir="$(dirname "${AbsolutScriptPath}")"
+EnvFile="OpenSBLIEnvVar"
+if [[ -f ${EnvFile} ]] 
+then
+   rm ${EnvFile}
+fi
+echo "To set up a few environment variables, please use source ${EnvDir}/${EnvFile}"
+echo "export PYTHON=\"source ${EnvDir}/Python/bin/activate \"${EnvDir}/Python\"\"" > ${EnvFile}
+export PATH=$PATH:${EnvDir} >> ${EnvFile}
+echo "echo \"To use the pre-installed Python, run \"eval \$PYTHON\"\"" >> ${EnvFile}
+
+            
