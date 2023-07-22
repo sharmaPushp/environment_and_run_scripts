@@ -64,8 +64,8 @@
     ../../../CompileC.sh
     ```
   - Step 4 Optional setup
-  
-    After successfully compiling and installing everything, the script will indicate that we can use set up a few more environment variables by "source" the script OpenSBLIEnvVar under the specified directory (say ~/tmp/OpenSBLIEnv). It will set up the $PATH so that we can run Generate.sh and CompileC.sh without "../../../". Also, one can call $PYTHON to enter into the provided Python environment for postprocessing. 
+
+    After successfully compiling and installing everything, the script will indicate that we can use set up a few more environment variables by "source" the script OpenSBLIEnvVar under the specified directory (say ~/tmp/OpenSBLIEnv). It will set up the $PATH so that we can run Generate.sh and CompileC.sh without "../../../". Also, one can call source $PYTHON to enter into the provided Python environment for postprocessing.
 
 - Generate the submission script for supercomputers
 
