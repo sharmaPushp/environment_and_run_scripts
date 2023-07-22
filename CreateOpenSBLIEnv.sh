@@ -20,13 +20,13 @@ function usage {
 }
 # DAaaS is a STFC platform for training, using Rocky Linux at this moment
 
-optstring="hb:o:d:p:HC:m:"
+optstring="hb:o:d:pHC:m:"
 Compiler="Gnu"
 Branch="cpc_release"
 Dir="$HOME/OpenSBLI"
 Machine="Ubuntu"
 LocalHDF5="OFF"
-PythonVer="3"
+PythonVer=""
 OpsBranch="develop"
 
 while getopts ${optstring} options; do
@@ -54,14 +54,8 @@ while getopts ${optstring} options; do
             LocalHDF5="ON"
         ;;
         p)
-            PythonVer="3"
+            PythonVer="-p"
         ;;
-        P)
-                 
-
-            exit 0
-        ;;       
-      
         :)
             echo "$0: Must supply an argument to -$OPTARG." >&2
             exit 1
@@ -126,7 +120,7 @@ then
     ./InstallHDF5.sh -d "${Dir}/HDF5" -m ${Machine}
 fi
 # Python
-./InstallPython.sh -d $Dir/Python
+./InstallPython.sh -d $Dir/Python ${PythonVer}
 # OPS
 ./InstallOPS.sh -d $Dir/OPS-INSTALL -m ${Machine} ${WithHDF5} -o ${OpsBranch} -A ${Dir}
 # OpenSBLI
@@ -144,14 +138,11 @@ ScriptPath="${BASH_SOURCE:-$0}"
 AbsolutScriptPath="$(realpath "${ScriptPath}")"
 EnvDir="$(dirname "${AbsolutScriptPath}")"
 EnvFile="OpenSBLIEnvVar"
-if [[ -f ${EnvFile} ]] 
+if [[ -f ${EnvFile} ]]
 then
    rm ${EnvFile}
 fi
 echo "To set up a few environment variables, please use source ${EnvDir}/${EnvFile}"
-echo "export PYTHON=(source ${EnvDir}/Python/bin/activate \"${EnvDir}/Python\")" > ${EnvFile}
+echo "export PYTHON="${EnvDir}/Python/bin/activate \"${EnvDir}/Python\"" > ${EnvFile}
 echo "export PATH=\$PATH:${EnvDir}" >> ${EnvFile}
-echo "echo \"To use the pre-installed Python, run \\\$PYTHON\"" >> ${EnvFile}
-
-
-            
+echo "echo \"To use the pre-installed Python, run source \\\$PYTHON\"" >> ${EnvFile}
