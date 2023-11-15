@@ -16,7 +16,8 @@ function usage {
     echo "./$(basename $0) -H -> if installing a local HDF5 library"
     echo "./$(basename $0) -c -> Specifying the compiler"
     echo "./$(basename $0) -m -> Specifying the machine type"
-    echo "Machine type can be: Ubuntu (default) ARCHER2 IRIDIS5 Fedora DAaaS"
+    echo "Machine type can be: Ubuntu ARCHER2 IRIDIS5 Fedora DAaaS"
+    echo "If without specifying the machine, the script will assume all dependencies prepared!"
 }
 # DAaaS is a STFC platform for training, using Rocky Linux at this moment
 
@@ -24,7 +25,7 @@ optstring="hb:o:d:pHC:m:"
 Compiler="Gnu"
 Branch="cpc_release"
 Dir="$HOME/OpenSBLI"
-Machine="Ubuntu"
+Machine="None"
 LocalHDF5="OFF"
 PythonVer=""
 OpsBranch="develop"

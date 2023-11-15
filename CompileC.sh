@@ -10,11 +10,12 @@ function usage {
     echo "./$(basename $0) -H -> Specifying the HDF5 directory"
     echo "./$(basename $0) -e -> Sepcifying the envirment directory."
     echo "./$(basename $0) -m -> Specifying the machine type"
-    echo "Machine type can be: Ubuntu (default) ARCHER2 IRIDIS5 Fedora DAaaS"
+    echo "Machine type can be: Ubuntu ARCHER2 IRIDIS5 Fedora DAaaS"
+    echo "If without specifying the machine, the script will assume all dependencies prepared!"
 
 }
 
-Machine="Ubuntu"
+Machine="None"
 ScriptPath="${BASH_SOURCE:-$0}"
 AbsolutScriptPath="$(realpath "${ScriptPath}")"
 EnvDir="$(dirname "${AbsolutScriptPath}")"

@@ -40,7 +40,7 @@
     ```bash
     ./CreateOpenSBLIEnv.sh -d ~/tmp/OpenSBLIEnv
     ```
-    During the creation, a local Ubuntu desktop is assumed for the machine type. If using it on a supercomputer, we need to specify the machine type, e.g.,
+    During the creation, the script will assume all dependencies are ready by default. But we also provide help on installing these dependencies for a few Linux distributions and clusters, e.g.,
 
     ```bash
     ./CreateOpenSBLIEnv.sh -d ~/tmp/OpenSBLIEnv -m CIRRUS

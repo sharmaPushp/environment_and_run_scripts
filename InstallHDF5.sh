@@ -12,14 +12,15 @@ function usage {
     echo "./$(basename $0) -f -> Enabling the Fortran support."
     echo "./$(basename $0) -s -> Compiling in the sequential mode (note OPS requires the parallel by default if using CMake)."
     echo "./$(basename $0) -m -> Specifying the machine type"
-    echo "Machine type can be: Ubuntu (default) ARCHER2 IRIDIS5 Fedora DAaaS"
+    echo "Machine type can be: Ubuntu  ARCHER2 IRIDIS5 Fedora DAaaS"
+    echo "If without specifying the machine, the script will assume all dependencies prepared!"
 }
 optstring="v:d:m:fsh"
 HDF5Ver="1.12.1"
 Dir="$HOME/HDF5"
 Parallel="ON"
 Fortran="OFF"
-Machine="Ubuntu"
+Machine="None"
 
 while getopts ${optstring} options; do
     case ${options} in
