@@ -97,7 +97,8 @@ mkdir -p $Dir
 cd $Dir ## needed by normal version
 ## Download the scripts
 
-wget -c https://github.com/jpmeng/aosh/archive/refs/heads/main.zip
+# wget -c https://github.com/jpmeng/aosh/archive/refs/heads/main.zip
+wget -c https://github.com/opensbli/environment_and_run_scripts/archive/refs/heads/main.zip
 unzip main.zip
 rm main.zip
 mv aosh-main/*  .
