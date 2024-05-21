@@ -103,8 +103,8 @@ unzip main.zip
 rm main.zip
 mv aosh-main/*  .
 rm -r -f aosh-main
-# Set the default machine in CompileC.sh
-sed -i "s/Machine=\"Ubuntu\"/Machine=\"${Machine}\"/g" CompileC.sh
+# Set the default machine in CompileC.sh changed from "Ubuntu" to "None"
+sed -i "s/Machine=\"None\"/Machine=\"${Machine}\"/g" CompileC.sh
 ## Install local HDF5 if needed
 WithHDF5=""
 if [[ "${LocalHDF5}"  == "ON" ]]
