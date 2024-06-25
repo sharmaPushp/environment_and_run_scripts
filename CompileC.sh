@@ -73,6 +73,7 @@ then
     module load load-epcc-module
     module load cmake/3.21.3
     module load PrgEnv-gnu
+    module load cray-python/3.9.13.1
 
     if [ -z ${HDF5Root} ]
     then
@@ -87,8 +88,9 @@ then
     then
         module load hdf5/1.10.2/gcc/parallel
     fi
-    module load cuda/10.0
+    #module load cuda/10.0
     module load cmake
+    module load python/3.9.7
 fi
 
 OpenSBLIBuild="BUILD_OPS_C_SAMPLE(OpenSBLI \"NONE\" \"NONE\" \"NONE\" \"NO\" \"NO\")"
