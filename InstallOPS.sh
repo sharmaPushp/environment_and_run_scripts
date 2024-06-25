@@ -124,7 +124,7 @@ then
     then
         module load hdf5/1.10.2/gcc/parallel
     fi
-    module load cuda/10.0
+    #module load cuda/10.0
     module load cmake
     module load python/3.9.7
 fi
