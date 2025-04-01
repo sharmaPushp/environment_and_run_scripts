@@ -17,11 +17,11 @@
 
    - Also, check and ensure that the versions of the cmake and python packages meet the above-mentioned requirements, using the "--version" option. e.g. **"cmake --version"**, **"python3 --version"**, etc.
 
-   - Please check if **Python >= 3.8** installation is **present** or not using the command, **python3 --version**. This should point to a Python version which is **>=3.8**. You could also check using the command "**which python3**". This should point to **/usr/bin/python3**. You can further ensure that python3 really points to python **>=3.8** using the list command **"ll /usr/bin/python3"** and should show a soft link pointing to Python >= 3.8, e.g. if you have Python 3.12. installed then you should see, **/usr/bin/python3 -> python3.12**.
+   - Please check if **Python >= 3.8** installation is **present** or not using the command, **python3 --version**. This should point to a Python version which is **>=3.8**. You could also check using the command "**which python3**". This should point to **/usr/bin/python3**. You can further ensure that python3 really points to python **>=3.8** using the list command **"ll /usr/bin/python3"** and should show a soft link pointing to Python >= 3.8, e.g., if you have Python 3.12 installed then you should see, **/usr/bin/python3 -> python3.12**.
 
    - Also, please check if the corresponding python **venv** module is installed or not, e.g., using "**python3 -m venv --help**". If this returns a message like: "/usr/bin/python3: No module named venv". This means that this package is required to be installed separately using, e.g., on a Ubuntu machine, "**sudo apt install python3.12-venv**". You may need to use sudo if you are not the root user. **venv** module is used to create isolated virtual environments for Python projects. Without this package, commands like "python3.12 -m venv myenv" may not work.
 
-   - If **Python >= 3.8** installation is **missing**, you could install it using the apt install command, e.g., **apt install python3.12 python3.12-venv**. If you are not a root user, please use **sudo**, e.g., **sudo apt install python3.12 python3.12-venv**. Notice that this will install both "Python 3.12" and the corresponding 3.12 virtual environment module (Python3.12-venv) to help create virtual environments at the same time, as will be required later. Also, if you are using Fedora, you might have a different package manager such as **dnf**; in that case, use **sudo dnf install python3.12 python3.12-venv**.
+   - If **Python >= 3.8** installation is **missing**, you could install it using the apt install command, e.g., **apt install python3.12 python3.12-venv**. If you are not a root user, please use **sudo**, e.g., **sudo apt install python3.12 python3.12-venv**. Notice that this will install both "Python 3.12" and the corresponding 3.12 virtual environment module (python3.12-venv) to help create virtual environments at the same time, as will be required later. Also, if you are using Fedora, you might have a different package manager such as **dnf**; in that case, use **sudo dnf install python3.12 python3.12-venv**.
 
    - On HPC machines/clusters, e.g. **Archer2**, we load some of the appropriate modules using the module load command. Please check the script named "**_InstallOPS.sh_**". This script contains already tested appropriate modules which work on Archer2. If you want to use these scripts on any new HPC system, you would need to first find the appropriate modules (for python3, cmake, hdf5, GCC (GNU) compiler for cpp, etc., see **InstallOPS.sh**) and then add them to the **InstallOPS.sh** script manually.
 
@@ -39,13 +39,14 @@
 
     Now, the **CreateOpenSBLIEnv.sh** script can be used to install the full **OpenSBLI/OPS software** environment. A typical command looks as follows:
     
-    By default, the OPS library, the Python environment, and the OpenSBLI framework are installed inside the directory. If required, a local HDF5 can also be installed.
-
     ```bash
     ./CreateOpenSBLIEnv.sh -d /home/username/tmp/OpenSBLIEnv
-    ```
+    ```    
+    
+    The first argument of the script above, specified through a "**-d**" flag, is for the directory where you want to install the full environment. Here, the complete installation of the **OpenSBLI/OPS software** environment will be done within the directory called **OpenSBLIEnv** inside /home/username/tmp/. The path to this directory ****must**** use an **absolute path** as shown in the command,i.e., **/home/username/tmp/OpenSBLIEnv**. Also, you must ensure that there is no directory with the same name preexisting at this path, e.g., from previous failed attempts. Otherwise, the installation will simply exit without performing any installation. Please either delete the existing faulty installation (rm -rf /home/username/tmp/OpenSBLIEnv) or give it a different name, e.g., **OpenSBLIEnv_2**.
+
     By default, the OPS library, the Python environment, and the OpenSBLI framework are installed inside the directory **/home/username/tmp/OpenSBLIEnv**. If required, a local HDF5 can also be installed.
-    We note that the first argument of the script (i.e., the directory) must use an **absolute path**.
+    
     During the creation, the script will assume all dependencies are ready by default. But we also provide help on installing these dependencies for a few Linux distributions and clusters. This can be done using an additional flag. i.e., "-m". 
 
     ```bash
