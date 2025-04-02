@@ -52,7 +52,7 @@
     ```bash
     ./CreateOpenSBLIEnv.sh -d /home/username/tmp/OpenSBLIEnv -m Ubuntu
     ```
-    So far, the script-based installation has been tested on: Linux (Ubuntu/Fedora), ARCHER2, IRIDIS5, CIRRUS (GPU machine, going out of service in April 2025). One can use the machine flag **-m** with the machine name, as shown in the Ubuntu example above. Machine names such as **Ubuntu, Fedora, ARCHER2, and IRIDIS5** should work out of the box (names are case-sensitive; use as mentioned).
+    So far, the script-based installation has been tested on: Linux (Ubuntu/Fedora), ARCHER2, IRIDIS5, CIRRUS (GPU machine, going out of service in April 2025). One can use the machine flag **-m** with the machine name, as shown in the Ubuntu example above. Machine names such as **Ubuntu, Fedora, ARCHER2, and IRIDIS5** should work out of the box (names are **case-sensitive**; use as mentioned).
     
     Alternatively, one could replace /home/username/ with **~/**, which is a shortcut for **/home/username/**, as below
     ```bash
