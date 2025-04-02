@@ -47,12 +47,12 @@
 
     By default, the OPS library, the Python environment, and the OpenSBLI framework are installed inside the directory **/home/username/tmp/OpenSBLIEnv**. If required, a local HDF5 can also be installed.
     
-    During the creation, the script will assume all dependencies are ready by default. But we also provide help on installing these dependencies for a few Linux distributions and clusters. This can be done using an additional flag. i.e., "-m". 
+    During the creation, the script will assume all dependencies are ready by default. But we also provide help on installing these dependencies for a few Linux distributions and HPC clusters. This can be done using an additional flag. i.e., "-m". 
 
     ```bash
     ./CreateOpenSBLIEnv.sh -d /home/username/tmp/OpenSBLIEnv -m Ubuntu
     ```
-    So far, the script-based installation is tested on: Linux (Ubuntu/Fedora), ARCHER2, IRIDIS5, CIRRUS (GPU machine, going out of service in April 2025)
+    So far, the script-based installation has been tested on: Linux (Ubuntu/Fedora), ARCHER2, IRIDIS5, CIRRUS (GPU machine, going out of service in April 2025). One can use the machine flag **-m** with the machine name, as shown in the Ubuntu example above. Machine names such as **Ubuntu, Fedora, ARCHER2, and IRIDIS5** should work out of the box (names are case-sensitive; use as mentioned).
     
     Alternatively, one could replace /home/username/ with **~/**, which is a shortcut for **/home/username/**, as below
     ```bash
