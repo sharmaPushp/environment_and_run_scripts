@@ -61,14 +61,14 @@
     
   - Step 2 Testing if OpenSBLI/OPS environment is installed successfully
 
-    Before moving to the next step of building, compiling and running a specific app in the OpenSBLI/apps directory, one can check if the code generation and compilation steps are working successfully or not. For this, a file named "**RunTests.sh**" is available at the main installation/environment directory, e.g., in this case, "/home/username/tmp/OpenSBLIEnv". So, you need to go to the tests folder and run the following "**RunTests.sh**" script using,
+    Before moving to the next step of building, compiling and running a specific app in the OpenSBLI/apps directory, one can check if the code generation and compilation steps are working successfully or not. For this, a file named "**RunTests.sh**" is available at the main installation/environment directory, e.g., in this case, "/home/username/tmp/OpenSBLIEnv/OpenSBLIEnv". So, you need to go to the tests folder and run the following "**RunTests.sh**" script using,
 
     ```bash
     # assuming under the environment directory
     cd /home/username/tmp/OpenSBLIEnv/OpenSBLI/tests/
-    ../../RunTests.sh -p
+    ../../RunTests.sh -q
     ```
-    "**../../RunTests.sh -p**" command, along with **-p** flag, will run a few selected test cases and perform all stages including generate, compile, run and then check if the run produced some sensible numbers for the particular cases. If the tests were successful, you will get messages like, "Passed all tests successfully".
+    "**../../RunTests.sh -q**" command, along with **-q** flag, will run a few selected test cases and perform all stages including generate, compile, run and then check if the run produced some sensible numbers for the particular cases. If the tests were successful, you will get messages like, "Passed all tests successfully".
 
   - Step 3 Generate C/C++ codes for an application
 
@@ -91,7 +91,7 @@
     ```
   - Step 5 Optional setup
 
-    After successfully creating the OpenSBLI/OPS software environment after compiling and installing everything, the script will indicate that we can set up a few more environment variables by sourcing the script **OpenSBLIEnvVar** under the specified directory (using, e.g. **source ~/tmp/OpenSBLIEnv**). It will set up the $PATH so that we can run **Generate.sh** and **CompileC.sh** without using "../../../". Also, one can call **source $PYTHON** to enter into the provided Python environment for postprocessing.
+    After successfully creating the OpenSBLI/OPS software environment after compiling and installing everything, the script will indicate that we can set up a few more environment variables by sourcing the script **OpenSBLIEnvVar** under the specified directory (using, e.g. **source ~/tmp/OpenSBLIEnv/OpenSBLIEnvVar**). It will set up the $PATH so that we can run **Generate.sh** and **CompileC.sh** without using "../../../". Also, one can call **source $PYTHON** to enter into the provided Python environment for postprocessing.
 
     
 - Example of generating, compiling, running and postprocessing an OpenSBLI app using the 1d wave problem called "wave". Follow the below outlined process:
